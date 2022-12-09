@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <math.h>
+#include <assert.h>
 #include "radioactivity.h"
 
 double
 model(double *radioactivity, double *time, int N, double point)
 {
+        assert(radioactivity);
+        assert(time);
+
         // Value of the equation in given point.
         double ret = 0;
 
@@ -20,6 +24,9 @@ double
 nonlinear_equation(double *radioactivity, double *time, 
                    int N, double precision)
 {
+        assert(radioactivity);
+        assert(time);
+
         // Variable to find.
         double decay_time = 0;
 
@@ -47,6 +54,9 @@ nonlinear_equation(double *radioactivity, double *time,
 double 
 linear_equation (double *radioactivity, double *time, int N)
 {
+        assert(radioactivity);
+        assert(time);
+
         // Return value.
         double decay_rate = 0;
 
