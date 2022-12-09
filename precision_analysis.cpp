@@ -16,6 +16,9 @@ double precision_analysis(double *radioactivity, double *time, int N)
     double decay_time = nonlinear_equation(radioactivity, time, N, precision);
     double decay_rate = linear_equation(radioactivity, time, N);
 
+    printf("decay time: %.5lf +- 0.5\n"
+           "decay rate: %.5lf += 0.5\n", decay_time, decay_rate);
+
     double deviation_exp = NAN;
     double deviation_lin = NAN;
 
