@@ -3,7 +3,6 @@
 #include <math.h>
 
 const int INITIAL_SIZE = 10;
-const double precision = 1e-3;
 const double MAX_PRECISION_RATIO = 2;
 
 double precision_analysis(double *radioactivity, double *time, int N)
@@ -13,7 +12,7 @@ double precision_analysis(double *radioactivity, double *time, int N)
 
     int current_N = INITIAL_SIZE;
 
-    double decay_time = nonlinear_equation(radioactivity, time, N, precision);
+    double decay_time = nonlinear_equation(radioactivity, time, N, PRECISION);
     double decay_rate = linear_equation(radioactivity, time, N);
 
     printf("decay time: %.5lf +- 0.5\n"
